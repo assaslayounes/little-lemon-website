@@ -1,10 +1,9 @@
-
 import React from 'react';
 import './App.css';
 import Nav from './components/Nav';
+import Menu from './components/Menu'; 
 import Footer from './components/Footer';
 import Main from './components/Main';
-
 
 function App() {
 
@@ -14,6 +13,7 @@ function App() {
     <>
       <Nav items={items} />
       <Main /> 
+      <Menu />
       <Footer />
     </>
   );
