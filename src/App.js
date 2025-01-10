@@ -4,6 +4,7 @@ import './App.css';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Main from './components/Main';
+import BookingForm from './components/BookingForm';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <Nav items={items} />
       <Main /> 
+      <BookingForm />
       <Footer />
     </>
   );
