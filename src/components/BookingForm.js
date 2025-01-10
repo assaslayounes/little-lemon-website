@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-function BookingForm() {
+function BookingForm(props) {
     
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
@@ -9,17 +9,9 @@ function BookingForm() {
     const [occasion, setOccasion] = useState("");
     const occasions = ["Birthday", "Anniversary"];
 
-    const availableTimes = [
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00",
-    ];
-
     const handleDateChange = (e) => {
         setDate(e.target.value);
+        props.dispatch(e.target.value);
     };  
 
     const handleTimeChange = (e) => {
@@ -36,8 +28,8 @@ function BookingForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-       
-        alert(`Reservation made successfully for ${guests} guest(s) on ${date} at ${time} for a ${occasion}`);
+        props.submitForm(e);
+        //alert(`Reservation made successfully for ${guests} guest(s) on ${date} at ${time} for a ${occasion}`);
     };
 
     return (
@@ -56,7 +48,7 @@ function BookingForm() {
                             <label htmlFor='time'>Choose Time:</label>
                             <select id='time' name='time' value={time} onChange={handleTimeChange}>
                                 <option value=''>Select time</option>
-                                {availableTimes.map((availableTime) => (
+                                {props.availableTimes.availableTimes.map((availableTime) => (
                                     <option key={availableTime} value={availableTime}>
                                         {availableTime}
                                     </option>
