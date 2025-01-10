@@ -38,15 +38,14 @@ function BookingForm(props) {
                 <form onSubmit={handleSubmit}>
                     <fieldset>
                         {/*Choose date */}
-                        <legend>Make a Reservation</legend>
                         <div>
-                            <label htmlFor='date'>Choose date:</label>
-                            <input id='date' name='date' value={date} onChange={handleDateChange} type='date' required />
+                            <label htmlFor='book-date'>Choose date:</label>
+                            <input id='book-date' name='date' value={date} onChange={handleDateChange} type='date' required />
                         </div>
                         {/*Choose time */}
                         <div>
-                            <label htmlFor='time'>Choose Time:</label>
-                            <select id='time' name='time' value={time} onChange={handleTimeChange}>
+                            <label htmlFor='book-time'>Choose Time:</label>
+                            <select id='book-time' name='time' value={time} onChange={handleTimeChange}>
                                 <option value=''>Select time</option>
                                 {props.availableTimes.availableTimes.map((availableTime) => (
                                     <option key={availableTime} value={availableTime}>
@@ -57,13 +56,13 @@ function BookingForm(props) {
                         </div>
                         {/*Choose number of guests */}
                         <div>
-                            <label htmlFor='guests'>Number of Guests:</label>
-                            <input id='guests' name='guests' value={guests} onChange={handleGuestsChange} type='number' min={1} required />
+                            <label htmlFor='book-guests'>Number of Guests:</label>
+                            <input id='book-guests' name='guests' value={guests} onChange={handleGuestsChange} type='number' min={1} required />
                         </div>
                         {/*Occasion */}
                         <div>
-                            <label htmlFor='occasion'>Occasion:</label>
-                            <select id='occasion' name='occasion' value={occasion} onChange={handleOccasionChange} required>
+                            <label htmlFor='book-occasion'>Occasion:</label>
+                            <select id='book-occasion' name='occasion' value={occasion} onChange={handleOccasionChange} required>
                                 <option value=''>Select occasion</option>
                                 {occasions.map((item, index) => (
                                     <option key={index} value={item}>

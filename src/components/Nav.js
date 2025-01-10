@@ -23,7 +23,8 @@ const Nav = ({ items }) => {
       <ul className={`nav-links  ${menuOpen ? "visible" : ""}`}>
         {items.map((item, index) => (
           <li key={index}>
-            <a href={`#${item}`}>{item}</a>
+            {item === 'HOME'?
+            (<a href={`/`}>{item}</a>) : (<a href={`/${item}`}>{item}</a>) }
           </li>
         ))}
       </ul>

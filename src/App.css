@@ -75,7 +75,7 @@ nav ul li a:hover{
 
 .header {
   background-color: #495e57;
-  padding: 40px 0;
+  padding: 40px 0%;
 }
 
 .header section {
@@ -126,9 +126,8 @@ button {
   border-radius: 20px;
 }
 
-
 form, .comfirm{
-  padding: 10px 13%;
+  padding: 5px 0%;
 }
 
 .formField{
